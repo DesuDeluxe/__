@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+from subprocess import call
+with open('/sys/class/power_supply/ADP1/online', 'r') as f:
+    first_line = f.readline()
+if  first_line.rstrip() =='1':
+    call(['qdbus', 'org.kde.kwin', '/Compositor', 'org.kde.kwin.Compositing.resume'])
+else:
+    call(['qdbus', 'org.kde.kwin', '/Compositor', 'org.kde.kwin.Compositing.suspend'])
