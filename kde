@@ -1,3 +1,4 @@
 #!/usr/bin/env python
 from subprocess import call
   call(['qdbus', 'org.kde.kwin', '/KWin', 'toggleCompositing'])
+  print "effects toggled"
